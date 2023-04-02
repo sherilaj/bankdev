@@ -1,0 +1,37 @@
+body{
+background-image:url('/static/img/bankk.jpeg');
+background-repeat:no-repeat;
+background-size:cover;
+}
+.form-center {
+  display:flex;
+  justify-content: center;
+}
+.nav-item {
+    display: inline-block;
+    width: 100px;
+    height: 30px;
+    text-align: center;
+    color: white;
+    float:left;
+}
+.dropdown-item {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+.dropdown-item a {
+  float: none;
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+.dropdown-menu {
+  float: left;
+  overflow: hidden;
+}

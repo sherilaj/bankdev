@@ -1,0 +1,54 @@
+
+{% extends 'base.html' %}
+{% block body %}
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<h4 style="text-align:center;">USER REGISTRATION</h4>
+<div class="form-center">
+<form action="lastform" method="post">
+    {% csrf_token %}
+    <b>Name:<input type="text" name="name" required><br><br></b>
+    <b>Date of Birth:<input type="date" name="dob" required><br><br></b>
+    <b>Age:<input type="number" name="age" required><br><br></b>
+    <b>Contact no:<input type="number" name="phoneno" required><br><br></b>
+    <b>Mail id:<input type="email" name="mail" required><br><br></b>
+    <b><p>Please select your gender</p></b>
+    <b><input type="radio" name="gender">Male<br></b>
+    <b><input type="radio" name="gender">Female<br><br></b>
+    <b>Address:<input type="text" name="addr" required><br><br></b>
+    <b><label for="district">District</label></b>
+    <b><select name="district" required></b>
+        <b><option value="ekm">Ekm</option></b>
+        <b><option value="ala">Alapuzha</option></b>
+        <b><option value="ktm">Kottayam</option></b>
+        <b><option value="knr">Kannur</option></b>
+        <b><option value="ksd">Kasaragod</option></b>
+   <b> </select><br><br></b>
+
+    <b><label for="acctype" >Account type</label></b>
+    <b><select name="acctype" required></b>
+        <b><option value="sav">Savings acc</option></b>
+        <b><option value="cur">Current acc</option></b>
+
+    </select><br><br>
+    <b>Materials provide: <br></b>
+    <b><input type="checkbox" name="debit">Debit card<br></b>
+    <b><input type="checkbox" name="credit">Credit card<br></b>
+    <b><input type="checkbox" name="cheque">Cheque book<br><br></b>
+
+
+
+
+<input type="submit" class="btn btn-primary">
+
+<a href="{% url 'logout' %}"><input type="button" class="btn btn-warning" value="LOGOUT"></a>
+</form>
+</div>
+</body>
+</html>
+{% endblock %}

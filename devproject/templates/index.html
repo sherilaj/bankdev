@@ -1,0 +1,81 @@
+{% extends 'base.html'	%}
+{% block body %}
+{% load static %}
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+
+            <img src="{% static 'img/ZBanklogo.png' %}" alt="logo" width="70px;" height="60px;">
+            <a class="navbar-brand" href="#"> --ZBank</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavDropdown">
+            <ul class="navbar-nav">
+
+				{% if user.is_authenticated %}
+				<li style="color:white;">Hi {{user.username}}</li>
+				<li class="nav-item">
+                <a class="nav-link" href="{% url 'logout' %}">Logout</a>
+                </li>
+				{% else %}
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'login' %}">Login</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link" href="{% url 'register' %}">Register</a>
+              </li>
+				{% endif %}
+              <li class="nav-item dropdown">
+                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                  BRANCHES
+                </a>
+                <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                  <a class="dropdown-item" href="#">Action</a>
+                  <a class="dropdown-item" href="#">Another action</a>
+                  <a class="dropdown-item" href="#">Something else here</a>
+                </div>
+              </li>
+
+
+                <li class="nav-item">
+                <a class="nav-link" href="https://en.wikipedia.org/wiki/Ernakulam">Ernakulam</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://en.wikipedia.org/wiki/Kottayam_district">kottayam</a>
+              </li>
+                <li class="nav-item">
+                <a class="nav-link" href="https://en.wikipedia.org/wiki/Thiruvananthapuram">Trivandrum</a>
+              </li>
+                 <li class="nav-item">
+                <a class="nav-link" href="https://en.wikipedia.org/wiki/Thrissur">Thrissur</a>
+              </li>
+                 <li class="nav-item">
+                <a class="nav-link" href="https://en.wikipedia.org/wiki/Idukki_district">Idukki</a>
+              </li>
+            </ul>
+          </div>
+
+        </nav>
+    </div>
+</div>
+
+<br>
+<div class="row">
+    <div class="col-md-6">
+      <h5>ZBank is an Indian Multinational, Public Sector Banking and Financial services statutory body headquartered in Mumbai. The rich heritage and legacy of over 200 years,
+        accredits as the most trusted Bank by Indians through generations. </h5><br>
+        <b><h6>click here to login to ur account</h6><br></b>
+        <a href="{% url 'login' %}"><input type="button" class="btn btn-primary" value="LOGIN"></a>
+    </div>
+    <div class="col-md-6">
+        <img src="{% static 'img/bankcoin.jpg' %}" alt="ba" width="550px;" height="550px;">
+    </div>
+</div>
+
+</div>
+
+</body>
+</html>
+{% endblock %}
